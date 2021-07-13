@@ -9,7 +9,7 @@ export default function Home() {
    const [events, setEvents] = useState([]);
 
   useEffect(() =>{
-     fetch('http://localhost:4002/events')
+     fetch('https://vast-caverns-87711.herokuapp.com/events')
      .then(res => res.json())
      .then(data => setEvents(data))
   }, [])

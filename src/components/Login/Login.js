@@ -80,7 +80,7 @@ const handleGoogleSignIn = () =>{
 
 useEffect(() =>{
   if(diffrentUser.email){
-    fetch('http://localhost:4002/diffrent', {
+    fetch('https://vast-caverns-87711.herokuapp.com/diffrent', {
       method: "POST",
       body:JSON.stringify(diffrentUser),
       headers: {

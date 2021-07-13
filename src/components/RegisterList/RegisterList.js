@@ -5,7 +5,7 @@ const RegisterList = () => {
     const [regList, setRegList] = useState([]);
     console.log(regList);
     useEffect(() => {
-        fetch('http://localhost:4002/diffrentUser')
+        fetch('https://vast-caverns-87711.herokuapp.com/diffrentUser')
         .then(res => res.json())
         .then(data => setRegList(data))
     }, [])

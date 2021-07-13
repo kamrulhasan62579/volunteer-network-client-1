@@ -15,7 +15,7 @@ const RegisterEvent = () => {
     
     const [findData, setFindData] = useState({});
     useEffect(() => {
-      fetch(`http://localhost:4002/find/${id}`)
+      fetch(`https://vast-caverns-87711.herokuapp.com/find/${id}`)
       .then(res => res.json())
       .then(data => setFindData(data))
     }, [id])
@@ -24,7 +24,7 @@ const RegisterEvent = () => {
       
         const newData = {...data, event: findData, ...loggedInUser};
         console.log(newData);
-        fetch('http://localhost:4002/regData', {
+        fetch('https://vast-caverns-87711.herokuapp.com/regData', {
             method: 'POST',
             body: JSON.stringify(newData),
             headers: {
@@ -36,7 +36,7 @@ const RegisterEvent = () => {
     };
     const [onceDatas, setOnceDatas] = useState([]);
      useEffect(() => {
-       fetch(`http://localhost:4002/regis/3?email=${loggedInUser.email}`)
+       fetch(`https://vast-caverns-87711.herokuapp.com/regis/3?email=${loggedInUser.email}`)
        .then(res =>res.json())
        .then(data => setOnceDatas(data))
      }, [])

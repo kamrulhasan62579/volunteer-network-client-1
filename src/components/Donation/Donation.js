@@ -11,7 +11,7 @@ export default function Donation() {
   const onSubmit = data => {
     const newData = {...data, image: img}
     console.log(newData);
-    fetch('http://localhost:4002/addEvent', {
+    fetch('https://vast-caverns-87711.herokuapp.com/addEvent', {
         method: 'POST',
         body: JSON.stringify(newData),
         headers: {
