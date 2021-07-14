@@ -64,10 +64,13 @@ const handleGoogleSignIn = () =>{
     firebase.auth()
   .signInWithPopup(provider)
   .then((result) => {
-    setLoggedInUser(result.user)
-    console.log(result.user)
+    const newUser = {...loggedInUser};
+    newUser.email =result.user.email 
+    newUser.displayName =result.user.displayName 
+    setLoggedInUser(newUser)
+    console.log(newUser)
     if (result.additionalUserInfo.isNewUser === true && result.user.email) {
-        setDiffrentUser(result.user)
+      setDiffrentUser(result.user)
     }
     if (result.additionalUserInfo.isNewUser === false) {
       history.replace(from);

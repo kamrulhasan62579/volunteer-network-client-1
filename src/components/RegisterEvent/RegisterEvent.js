@@ -23,18 +23,19 @@ const RegisterEvent = () => {
     const onSubmit = data => {
       
         const newData = {...data, event: findData, ...loggedInUser};
-        console.log(newData);
+        console.log(newData.email);
         fetch('https://vast-caverns-87711.herokuapp.com/regData', {
             method: 'POST',
-            body: JSON.stringify(newData),
+            body:JSON.stringify(newData),
             headers: {
               'Content-type': 'application/json; charset=UTF-8'
-            },
+            }
           })
             .then((response) => response.json())
-            .then((json) => console.log(json));
+            .then((json) => console.log(json))
     };
     const [onceDatas, setOnceDatas] = useState([]);
+    console.log(onceDatas)
      useEffect(() => {
        fetch(`https://vast-caverns-87711.herokuapp.com/regis/3?email=${loggedInUser.email}`)
        .then(res =>res.json())
